@@ -1,0 +1,18 @@
+// SPDX-License-Identifier: BSD-3-Clause
+
+/dts-v1/;
+
+#include <skeleton64.dtsi>
+#include <lk2nd.dtsi>
+
+/ {
+	qcom,msm-id = <QCOM_ID_MSM8917 0>;
+	// todo: use QCOM_BOARD_ID(..,..,..)
+	qcom,board-id = <0x1000b 0x00>;
+};
+
+&lk2nd {
+    // todo: move deviceinfo to subnode
+    // todo: change model to marketing name if possible
+    model = "Qualcomm Technologies, Inc. MSM8917-PMI8937 QRD SKU5";
+};
