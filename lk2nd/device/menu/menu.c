@@ -186,12 +186,12 @@ void display_fastboot_menu(void)
 
 	scale_factor += 1;
 	incr = FONT_HEIGHT * scale_factor;
-	fbcon_puts_ln(WHITE, y, incr, true, "Nya kawaii <3");
+	fbcon_puts_ln(WHITE, y, incr, true, xstr(BOARD));
 
 	scale_factor = old_scale;
 	incr = FONT_HEIGHT * scale_factor;
 
-	fbcon_puts_ln(SILVER, y, incr, true, "Lk where k means Cat");
+	fbcon_puts_ln(SILVER, y, incr, true, "21.0-littlekitty2st");
 	if (lk2nd_dev.model)
 		fbcon_puts_ln(SILVER, y, incr, true, lk2nd_dev.model);
 	else
