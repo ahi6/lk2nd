@@ -139,12 +139,12 @@ static struct {
 	unsigned color;
 	void (*action)(void);
 } menu_options[] = {
-	{ "  Reboot  ", GREEN,  opt_reboot },
-	{ " Continue ", WHITE,  opt_continue },
-	{ " Recovery ", ORANGE, opt_recovery },
-	{ "Bootloader", ORANGE, opt_bootloader },
-	{ "    EDL   ", RED,    opt_edl },
-	{ " Shutdown ", RED,    opt_shutdown },
+	{ "   RebUwUt   ", GREEN,  opt_reboot },
+	{ " MeowTinuNya ", WHITE,  opt_continue },
+	{ " Re:nya:very ", ORANGE, opt_recovery },
+	{ " BUwUtloader ", ORANGE, opt_bootloader },
+	{ "    NyaDL    ", RED,    opt_edl },
+	{ " ShutdowNyan ", RED,    opt_shutdown },
 };
 
 #define fbcon_printf_ln(color, y, incr, x...) \
@@ -186,19 +186,19 @@ void display_fastboot_menu(void)
 
 	scale_factor += 1;
 	incr = FONT_HEIGHT * scale_factor;
-	fbcon_puts_ln(WHITE, y, incr, true, xstr(BOARD));
+	fbcon_puts_ln(WHITE, y, incr, true, "Nya kawaii <3");
 
 	scale_factor = old_scale;
 	incr = FONT_HEIGHT * scale_factor;
 
-	fbcon_puts_ln(SILVER, y, incr, true, LK2ND_VERSION);
+	fbcon_puts_ln(SILVER, y, incr, true, "Lk where k means Cat");
 	if (lk2nd_dev.model)
 		fbcon_puts_ln(SILVER, y, incr, true, lk2nd_dev.model);
 	else
-		fbcon_puts_ln(RED, y, incr, true, "Unknown (FIXME!)");
+		fbcon_puts_ln(RED, y, incr, true, "Unknown (FIXME <3!)");
 	y += incr;
 
-	fbcon_puts_ln(RED, y, incr, true, "Fastboot mode");
+	fbcon_puts_ln(RED, y, incr, true, "MeowBoot mode");
 	y += incr;
 
 	/* Skip lines for the menu */
@@ -206,12 +206,12 @@ void display_fastboot_menu(void)
 	y += incr * (ARRAY_SIZE(menu_options) + 1);
 
 	if (lk2nd_dev.single_key) {
-		fbcon_puts_ln(SILVER, y, incr, true, "Short press to navigate.");
-		fbcon_puts_ln(SILVER, y, incr, true, "Long press to select.");
+		fbcon_puts_ln(SILVER, y, incr, true, "Short press to nyavigate.");
+		fbcon_puts_ln(SILVER, y, incr, true, "Long press to selenyact.");
 	} else {
-		fbcon_printf_ln(SILVER, y, incr, true, "%s to navigate.",
+		fbcon_printf_ln(SILVER, y, incr, true, "%s to nyavigate.",
 				(lk2nd_dev.menu_keys.navigate ? lk2nd_dev.menu_keys.navigate : "Volume keys"));
-		fbcon_printf_ln(SILVER, y, incr, true, "%s to select.",
+		fbcon_printf_ln(SILVER, y, incr, true, "%s to selenyact.",
 				(lk2nd_dev.menu_keys.select ? lk2nd_dev.menu_keys.select : "Power key"));
 	}
 
@@ -223,11 +223,11 @@ void display_fastboot_menu(void)
 	incr = FONT_HEIGHT * scale_factor;
 	y = fb->height - 8 * incr;
 
-	fbcon_puts_ln(WHITE, y, incr, true, "About this device");
+	fbcon_puts_ln(WHITE, y, incr, true, "About this nyavice");
 
 
 	if (lk2nd_dev.panel.name)
-		fbcon_printf_ln(SILVER, y, incr, false, " Panel:  %s", lk2nd_dev.panel.name);
+		fbcon_printf_ln(SILVER, y, incr, false, " Panyal:  %s", lk2nd_dev.panel.name);
 	if (lk2nd_dev.battery)
 		fbcon_printf_ln(SILVER, y, incr, false, " Battery:  %s", lk2nd_dev.battery);
 #if WITH_LK2ND_DEVICE_2ND
@@ -236,7 +236,7 @@ void display_fastboot_menu(void)
 #endif
 
 	fbcon_printf_ln(armv8 ? GREEN : YELLOW, y, incr, false, " ARM64:  %s",
-			armv8 ? "available" : "unavailable");
+					armv8 ? "nyavailable" : "unyavailable");
 
 	/*
 	 * Loop to render the menu elements
@@ -250,11 +250,10 @@ void display_fastboot_menu(void)
 		for (i = 0; i < ARRAY_SIZE(menu_options); ++i) {
 			fbcon_printf_ln(
 				i == sel ? menu_options[i].color : SILVER,
-				y, incr, true, "%c %s %c",
-				i == sel ? '>' : ' ',
+				y, incr, true, "%s %s %s",
+				i == sel ? ">_<" : "   ",
 				menu_options[i].name,
-				i == sel ? '<' : ' '
-			);
+				i == sel ? ">_<" : "   ");
 		}
 
 		fbcon_flush();
