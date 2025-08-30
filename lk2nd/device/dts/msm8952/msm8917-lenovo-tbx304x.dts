@@ -7,8 +7,6 @@
 
 / {
 	qcom,msm-id = <QCOM_ID_MSM8917 0>;
-	// should i also add <QCOM_BOARD_ID_QRD, 0> as a second option?
-	//qcom,board-id = <0x1000b 0x00>;
 	qcom,board-id = <QCOM_BOARD_ID(QRD, 1, 0) 0>;
 };
 
