@@ -16,6 +16,8 @@
     model = "Lenovo Tab 4 10 (TB-X304X)";
     compatible = "lenovo,tbx304x";
 
+    lk2nd,dtb-files = "msm8917-lenovo-tbx304x";
+
     lk2nd,match-panel;
     panel {
         compatible = "lenovo,tbx304x-panel", "lk2nd,panel";
