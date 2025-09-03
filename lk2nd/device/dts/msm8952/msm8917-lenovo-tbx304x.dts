@@ -13,15 +13,15 @@
 };
 
 &lk2nd {
-    model = "Lenovo Tab 4 10 (TB-X304L)";
-    compatible = "lenovo,tb-x304l";
+    model = "Lenovo Tab 4 10 (TB-X304X)";
+    compatible = "lenovo,tbx304x";
 
     lk2nd,match-panel;
     panel {
-        compatible = "lenovo,tb-x304l-panel", "lk2nd,panel";
+        compatible = "lenovo,tbx304x-panel", "lk2nd,panel";
 
         qcom,mdss_dsi_nt35521s_wxga_video {
-            compatible = "lenovo,tb-x304l-nt35521s";
+            compatible = "lenovo,tbx304x-nt35521s";
             touchscreen-compatible = "novatek,nt35521s";
         };
     };
